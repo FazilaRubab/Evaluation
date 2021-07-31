@@ -13,3 +13,15 @@ plt.ylabel("water_temp_c")
 m, b = np.polyfit(x, y, 1)
 plt.plot(x, m*x + b)
 plt.savefig('tide vs water_temp.png')
+
+import matplotlib.pyplot as plt
+import numpy as np
+x = data["tide_cm"]
+y =data["sal_psu"]
+plt.title("tide_cm vs sal_psu")
+plt.xlabel("tide_cm")
+plt.ylabel("sal_psu")
+plt.plot(x, y, 'o')
+m, b = np.polyfit(x, y, 1)
+plt.plot(x, m*x + b)
+plt.savefig('tide vs sal_psu.png')
