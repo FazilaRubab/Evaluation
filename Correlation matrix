@@ -1,0 +1,15 @@
+import pandas as pd
+data=pd.read_csv("arg_busan.csv")
+data.head()
+
+import matplotlib.pyplot as plt
+import numpy as np
+x = data["tide_cm"]
+y =data["water_temp-c"]
+plt.plot(x, y, 'o')
+plt.title("tide_cm vs water_temp_c")
+plt.xlabel("tide_cm")
+plt.ylabel("water_temp_c")
+m, b = np.polyfit(x, y, 1)
+plt.plot(x, m*x + b)
+plt.savefig('tide vs water_temp.png')
